@@ -117,3 +117,47 @@ Ability to adjust resources to meet demand.
 Scaling can happen manually or automatically to match demand.
 
 ### Benefits of reliability and predictability in the cloud
+
+#### Reliability
+- Ability to recover from failures and continue to function.
+- The clouds decentralized design enables reliable and resilient infrastructure.
+- Global scale helps in catastrophic events
+
+#### Predictability 
+Performance predictability and cost predictability helps building confidence
+
+**Performance**
+- Performance predictability focuses on predicting the resources needed to deliver a positive experience for your customers.
+- Cloud features like Autoscaling, load balancing, high availability lead to performance predictability
+
+**Cost**
+- Cost predictability is focused on predicting or forecasting the cost of the cloud spend
+- Real time tracking, Data Analysis, Total Cost of Ownership, Pricing Calculator
+
+### Security and governance
+**Governance and compliance**
+- Cloud based auditing
+- Templates
+- Automatic Updates
+
+**Security**
+- Maximum control via IaaS
+- Well suited to handle things like distributed denial of service (DDoS) attacks
+
+### Manageability
+Two types:
+
+#### Management of the cloud
+Management of the cloud speaks to managing your cloud resources. In the cloud, you can:
+- Automatically scale resource deployment based on need.
+- Deploy resources based on a preconfigured template, removing the need for manual configuration.
+- Monitor the health of resources and automatically replace failing resources.
+- Receive automatic alerts based on configured metrics, so you’re aware of performance in real time.
+
+#### Management in the cloud
+Management in the cloud speaks to how you’re able to manage your cloud environment and resources. You can manage these:
+
+- Through a web portal.
+- Using a command line interface.
+- Using APIs.
+- Using PowerShell.
