@@ -195,6 +195,54 @@ Some common scenarios for SaaS are:
 
 # [Describe Azure architecture and services](https://learn.microsoft.com/en-us/training/paths/azure-fundamentals-describe-azure-architecture-services/)
 ## Core architectural components of Azure
+### What is MS Azure
+
+Azure is Microsoft's cloud computing platform, a continually expanding set of cloud services that help you meet current and future business challenges.
+- most services are pay as you go
+- Azure provides IaaS, PaaS and SaaS
+- Storage, VMs, Cloud Functions, Containerization, CosmosDB, Azure Machine Learning, Regional Datacenters
+- AzurePortal for Resource Management
+
+### Azure accounts 
+To create and use Azure services, you need an Azure subscription.
+![Infographic Azure Accounts](https://learn.microsoft.com/en-us/training/wwl-azure/describe-core-architectural-components-of-azure/media/account-scope-levels-9ceb3abd.png)
+If you're new to Azure, you can sign up for a free account on the Azure website to start exploring at no cost to you.
+
+**Free Account**
+The [Azure free account](https://azure.microsoft.com/free) includes:
+- Free access to popular Azure products for 12months
+- A credit to use for the first 30 days.
+- Access to more than 25 products that are always free
+
+**Learn Sandbox**
+Many of the Learn exercises use a technology called the sandbox, which creates a temporary subscription that's added to your Azure account. 
+
+### Explore the Learn Sandbox
+
+Commands:
+
+|Command|Result|
+|-|-|
+|az version|shows the version of the cli you are using|
+|bash|switches to bash mode |
+|az interactive|switches to interactive mode|
+|az upgrade| upgrades the cli|
+
+### Describe Azure physical infrastructure
+#### Physical
+Microsoft is providing Azure via multiple datacenters all around the world. 
+
+The resources in the facilities are arranged in racks and have dedicated power, cooling and networking.
+
+Datacenters are grouped into Azure Regions or Azure Availability zones that are designed to help you achieve resiliency and reliability for your business-critical workloads.
+
+[Explore the physical infrastructure](https://datacenters.microsoft.com/globe/explore)
+
+#### Region
+A region is a geographical area on the planet that contains at least one, but potentially multiple datacenters that are nearby and networked together with a low-latency network. 
+
+#### Availability Zones
+
 ## Azure compute and networking services
 ## Azure storage services
 ## Azure identity access and security
