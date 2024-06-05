@@ -1,23 +1,17 @@
 Notes and Resources for the AZ-900 certification.
-# AZ-900:
 
----
+# Describe cloud concepts
 
-## Describe cloud concepts
 
----
+## Describe cloud computing
 
-### Describe cloud computing
 
----
-
-#### What is cloud computing?
+### What is cloud computing?
 
 Cloud computing is the delivery of computing services over the internet.
 
----
 
-#### What is the shared responsibility model
+### What is the shared responsibility model
 
 Customers are always responsible for:
 - The information and data stored in the cloud
@@ -44,9 +38,8 @@ This depends on the Type of Service:
 
 ![Infographic Overview Responsibility](https://learn.microsoft.com/en-us/training/wwl-azure/describe-cloud-compute/media/shared-responsibility-b3829bfe.svg)
 
----
 
-#### Define cloud models
+### Define cloud models
 
 
 |Public cloud|Private cloud|Hybrid cloud|
@@ -65,9 +58,8 @@ Azure Arc:
 Azure VMware Solution:
 - Run your VMWare workloads in Azure
 
----
 
-#### Consumption based model
+### Consumption based model
 Capital Expenditure(CapEx):
 - Typically one-time up-front payment
 - E.g new datacenter
@@ -91,6 +83,37 @@ You typically pay only for the cloud services you use, which helps you:
 - Run your infrastructure more efficiently.
 - Scale as your business needs change.
 
----
 
-#### 
+## Describe the benefits of using cloud services
+
+### High availability and scalability
+
+#### Availability
+- focuses on ensuring maximum availability
+- Azure is highly available cloud environment
+- Service Level Agreements define the availability
+
+|Uptime|per Week|per Month|
+|-|-|-|
+|99%|1.6h|7.2h|
+|99.9%|10min|43min|
+
+--> SLAs should be selected accordingly
+
+#### Scalability
+Ability to adjust resources to meet demand. 
+- Adding resources to match increasing demand
+- No overpaying for services
+
+**Vertical Scaling**
+- scaling up by increasing the resources quality -> e.g more CPU or RAM
+- scaling down by decreasing the resources quality
+
+**Horizontal Scaling**
+- scaling out -> Adding resources (More servers)
+- scaling in -> Removing resources (Less servers)
+- One can scale horizontally by simply increasing the number of resources
+
+Scaling can happen manually or automatically to match demand.
+
+### Benefits of reliability and predictability in the cloud
