@@ -194,5 +194,12 @@ Some common scenarios for SaaS are:
 - Finance and expense tracking.
 
 # [Describe Azure architecture and services](https://learn.microsoft.com/en-us/training/paths/azure-fundamentals-describe-azure-architecture-services/)
-
+## Core architectural components of Azure
+## Azure compute and networking services
+## Azure storage services
+## Azure identity access and security
 # [Describe Azure management and governance](https://learn.microsoft.com/en-us/training/paths/describe-azure-management-governance/)
+## Cost management in Azure
+## Features and Tools in Azure for governance and compliance
+## Features and tools for managing and deploying Azure resources
+## Monitoring tools
