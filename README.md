@@ -239,9 +239,50 @@ Datacenters are grouped into Azure Regions or Azure Availability zones that are 
 [Explore the physical infrastructure](https://datacenters.microsoft.com/globe/explore)
 
 #### Region
+
 A region is a geographical area on the planet that contains at least one, but potentially multiple datacenters that are nearby and networked together with a low-latency network. 
 
+When you deploy a resource in Azure, you'll often need to choose the region where you want your resource deployed.
+
 #### Availability Zones
+Availability zones are physically separate datacenters within an Azure region. 
+
+Each availability zone is made up of one or more datacenters equipped with independent power, cooling, and networking. An availability zone is set up to be an isolation boundary. If one zone goes down, the other continues working.
+
+![Availability Zones](https://learn.microsoft.com/en-us/training/wwl-azure/describe-core-architectural-components-of-azure/media/availability-zones-c22f95a3.png)
+
+**To ensure resiliency, a minimum of three separate availability zones are present in all availability zone-enabled regions. However, not all Azure Regions currently support availability zones.**
+
+Setting up own on premise redundancy requires duplicate hardware
+
+Availability zones are primarily for VMs, managed disks, load balancers, and SQL databases. Azure services that support availability zones fall into three categories:
+
+- Zonal services: You pin the resource to a specific zone (for example, VMs, managed disks, IP addresses).
+- Zone-redundant services: The platform replicates automatically across zones (for example, zone-redundant storage, SQL Database).
+- Non-regional services: Services are always available from Azure geographies and are resilient to zone-wide outages as well as region-wide outages.
+
+Even with the additional resiliency that availability zones provide, it’s possible that an event could be so large that it impacts multiple availability zones in a single region. To provide even further resilience, Azure has Region Pairs.
+
+#### Region Pairs
+Most Azure regions are paired with another region within the same geography (such as US, Europe, or Asia) at least 300 miles away.
+
+![regional pairs](https://learn.microsoft.com/en-us/training/wwl-azure/describe-core-architectural-components-of-azure/media/region-pairs-7c495a33.png)
+
+>Not all Azure services automatically replicate data or automatically fall back from a failed region to cross-replicate to another enabled region. In these scenarios, recovery and replication must be configured by the customer.Most regions are paired in two directions but one way pairing is possible.
+
+Additional advantages:
+- If an extensive Azure outage occurs, one region out of every pair is prioritized to make sure at least one is restored as quickly as possible for applications hosted in that region pair.
+- Planned Azure updates are rolled out to paired regions one region at a time to minimize downtime and risk of application outage.
+- Data continues to reside within the same geography as its pair (except for Brazil South) for tax- and law-enforcement jurisdiction purposes.
+
+#### Sovereign Regions
+Sovereign regions are instances of Azure that are isolated from the main instance of Azure. 
+
+- US DoD Central, US Gov Virginia, US Gov Iowa and more: These regions are physical and logical network-isolated instances of Azure for U.S. government agencies and partners. These datacenters are operated by screened U.S. personnel and include additional compliance certifications.
+- China East, China North, and more: These regions are available through a unique partnership between Microsoft and 21Vianet, whereby Microsoft doesn't directly maintain the datacenters.
+
+### Describe Azure management infrastructure
+
 
 ## Azure compute and networking services
 ## Azure storage services
