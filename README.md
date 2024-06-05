@@ -1,6 +1,6 @@
 Notes and Resources for the AZ-900 certification.
 
-# Describe cloud concepts
+# [Describe cloud concepts](https://learn.microsoft.com/en-us/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/)
 
 
 ## Describe cloud computing
@@ -193,3 +193,6 @@ Some common scenarios for SaaS are:
 - Business productivity applications.
 - Finance and expense tracking.
 
+# [Describe Azure architecture and services](https://learn.microsoft.com/en-us/training/paths/azure-fundamentals-describe-azure-architecture-services/)
+
+# [Describe Azure management and governance](https://learn.microsoft.com/en-us/training/paths/describe-azure-management-governance/)
