@@ -767,9 +767,9 @@ The following additional resources are intended to provide more information on t
   - Table Storage: `https://<storage-account-name>.table.core.windows.net`
 
 **Storage Tiers**
-- Hot -> Frequently accessed
-- Cold -> Infrequently accessed, stored for 30days
-- Archive -> Rarely accessed, 180 days stored
+- **Hot** -> Frequently accessed
+- **Cold** -> Infrequently accessed, stored for 30days
+- **Archive** -> Rarely accessed, 180 days stored
 
 ### Redundancy Options in Azure Storage
 
@@ -818,7 +818,7 @@ Remember that the data in your secondary region may not be up-to-date due to RPO
 
 >Azure Storage typically has an RPO of less than 15 minutes, although there's currently no SLA on how long it takes to replicate data to the secondary region.
 
-### Azure Storage Overview**
+### Azure Storage Overview
 
 #### Data Services
 
@@ -862,8 +862,8 @@ Remember that the data in your secondary region may not be up-to-date due to RPO
 - NoSQL datastore for large amounts of structured data.
 - Accepts authenticated calls from inside and outside Azure cloud, ideal for storing structured, non-relational data.
 
-#### Exercise - Create a Storage Blob**
-**Create a Storage Account:**
+### Exercise - Create a Storage Blob
+#### Create a Storage Account:
 
 1. Sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com).
 2. Select Create a resource.
@@ -880,7 +880,7 @@ Remember that the data in your secondary region may not be up-to-date due to RPO
 7. Select Review, then Create, and wait for the account to be created.
 8. Select Go to resource.
 
-**Work with Blob Storage:**
+#### Work with Blob Storage:
 
 1. Under Data storage, select Containers.
 2. Select + Container and provide a name and set Anonymous access level to Private.
@@ -890,6 +890,59 @@ Remember that the data in your secondary region may not be up-to-date due to RPO
 6. Paste the URL into a new tab to receive an error message.
 7. Go back to the Azure portal, select Change access level, set Anonymous access level to Blob, and select OK.
 8. Refresh the tab to access the file from the internet.
+
+### Azure Migration Overview
+
+#### Azure Migrate:
+- Helps migrate from on-premises environment to the cloud.
+- Unified migration platform with tools for assessment and migration.
+- Includes Azure Migrate: Discovery and assessment, Azure Migrate: Server Migration, and integrates with other Azure services and ISV offerings.
+
+#### Integrated Tools:
+- Azure Migrate: Discovery and assessment: Discover and assess on-premises servers.
+- Azure Migrate: Server Migration: Migrate various servers to Azure.
+- Data Migration Assistant: Assesses SQL Servers for migration.
+- Azure Database Migration Service: Migrates on-premises databases to Azure.
+- Azure App Service migration assistant: Assesses on-premises websites for migration to Azure App Service.
+
+#### Azure Data Box:
+- Physical migration service for transferring large amounts of data.
+- Accelerated secure data transfer via a proprietary Data Box storage device.
+- Maximum usable storage capacity of 80 terabytes.
+- Ideal for scenarios with limited network connectivity or large data sizes.
+- Use cases include one-time migration, media library migration, VM and application migration, disaster recovery, security requirements, and migration back to on-premises or other cloud providers.
+
+#### Data Box Usage:
+- Order via Azure portal, set up using local web UI, connect to network, transfer data, and return.
+- Supports one-time, periodic, or initial bulk transfers followed by incremental transfers.
+- Disks wiped clean in accordance with NIST 800-88r1 standards after data upload or export.
+
+### Azure File Movement Options
+
+In addition to large-scale migration using Azure Migrate and Azure Data Box, Azure offers tools for moving or interacting with individual files or small file groups:
+
+**AzCopy:**
+- Command-line utility for copying blobs or files to/from your storage account.
+- Supports upload, download, copying between storage accounts, and synchronization.
+- Works with other cloud providers.
+- Synchronization is one-directional.
+
+**Azure Storage Explorer:**
+- Standalone app with a graphical interface for managing files and blobs.
+- Works on Windows, macOS, and Linux.
+- Uses AzCopy for file and blob management tasks.
+- Allows uploading to Azure, downloading from Azure, and moving between storage accounts.
+
+**Azure File Sync:**
+- Centralizes file shares in Azure Files while maintaining Windows file server flexibility.
+- Bi-directionally syncs files between local Windows server and Azure.
+- Supports SMB, NFS, and FTPS protocols.
+- Allows multiple caches across the world.
+- Facilitates easy replacement of failed local servers.
+- Supports cloud tiering for frequent local access and cloud storage for infrequent files.
+
+### Knowledge Check
+![describe-azure-storage-services](describe-azure-storage-services.png)
 
 ## Azure identity access and security
 # [Describe Azure management and governance](https://learn.microsoft.com/en-us/training/paths/describe-azure-management-governance/)
