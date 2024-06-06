@@ -282,8 +282,64 @@ Sovereign regions are instances of Azure that are isolated from the main instanc
 - China East, China North, and more: These regions are available through a unique partnership between Microsoft and 21Vianet, whereby Microsoft doesn't directly maintain the datacenters.
 
 ### Describe Azure management infrastructure
+#### Resource
+A resource is the basic building block of Azure
+- Anything you create, deploy, provision etc.
+- E.g VMs, virtual networks, databases, cognitive services
 
+#### Resource groups
+Groupings of resources. 
 
+- Resources have to be added to a resource group. 
+- A single resource can only be in one resource group at a time
+- Resource groups cant be nested
+
+Resource groups provide a convenient way to group resources together.
+- Applying an action to a group will apply the action to all the resources 
+
+When you’re provisioning resources, it’s good to think about the resource group structure that best suits your needs.
+
+There aren’t hard rules about how you use resource groups, so consider how to set up your resource groups to maximize their usefulness for you.
+
+#### Azure subscriptions
+
+![Types of Subscriptions](https://learn.microsoft.com/en-us/training/wwl-azure/describe-core-architectural-components-of-azure/media/subscriptions-d415577b.png)
+**Using Azure requires an Azure subscription.**
+
+Subscriptions are a unit of management, billing, and scale.
+
+An Azure subscription links to an Azure account, which is an identity in Microsoft Entra ID or in a directory that Microsoft Entra ID trusts.
+
+An account can have multiple subscriptions, but it’s only required to have one. In a multi-subscription account, you can use the subscriptions to configure different billing models and apply different access-management policies.
+
+Azure subscriptions can be used to define boundaries:
+- Billing boundary: 
+This subscription type determines how an Azure account dis billed for using Azure. Separate billing reports and invoices are being generated for each subscription.
+- Access control boundary: 
+Azure applies access-management policies at the subscription level. You can create separate subscriptions to reflect organizational structures.
+
+**Create additional Azure subscriptions**
+With additional subscriptions you can separate:
+- Environments
+- Organizational structures
+- Billing
+
+#### Azure management groups
+This is the scope above subscriptions.
+Can be used to manage subscriptions accounting for access, policies and compliance.
+
+![Example Hierarchy](https://learn.microsoft.com/en-us/training/wwl-azure/describe-core-architectural-components-of-azure/media/management-groups-subscriptions-dfd5a108.png)
+
+Important facts about management groups:
+
+- 10,000 management groups can be supported in a single directory.
+- A management group tree can support up to six levels of depth. This limit doesn't include the root level or the subscription level.
+- Each management group and subscription can support only one parent.
+
+### Exercise Create an Azure resource
+[created a ressource](https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/7-exercise-create-azure-resource)
+### Knowledge check
+![knowledge check](describe-core-architectural-components-of-azure_kc.png)
 ## Azure compute and networking services
 ## Azure storage services
 ## Azure identity access and security
