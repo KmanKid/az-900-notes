@@ -726,7 +726,171 @@ The following additional resources are intended to provide more information on t
 
 - [Host a web application with Azure App Service](https://learn.microsoft.com/en-us/learn/modules/host-a-web-app-with-azure-app-service/) is a Microsoft Learn module that explores the process of hosting a web application in Azure.
 - [Introduction to Azure network foundation services](https://learn.microsoft.com/en-us/learn/paths/intro-to-azure-network-foundation-services/) is a Microsoft Learn course that provides greater insight and information on networking with Azure.
+
 ## Azure storage services
+
+### Azure Storage Account
+
+**Overview:**
+- Provides a unique namespace for Azure Storage data accessible worldwide over HTTP or HTTPS.
+- Offers secure, highly available, durable, and massively scalable storage.
+
+**Types of Storage Accounts:**
+1. **Standard General-Purpose v2:**
+   - Supports Blob Storage, Queue Storage, Table Storage, and Azure Files.
+   - Redundancy Options: LRS, GRS, RA-GRS, ZRS, GZRS, RA-GZRS.
+   - Standard storage account type for most Azure Storage scenarios.
+2. **Premium Block Blobs:**
+   - Supports Blob Storage (including Data Lake Storage).
+   - Redundancy Options: LRS, ZRS.
+   - Recommended for high transaction rates or scenarios requiring low storage latency.
+3. **Premium File Shares:**
+   - Supports Azure Files.
+   - Redundancy Options: LRS, ZRS.
+   - Recommended for enterprise or high-performance scale applications supporting SMB and NFS file shares.
+4. **Premium Page Blobs:**
+   - Supports Page Blobs only.
+   - Redundancy Options: LRS.
+   - Designed for page blob storage scenarios.
+
+**Storage Account Endpoints:**
+- Every storage account has a unique Azure Storage service endpoint formed by combining the account name and service-specific endpoint.
+- Storage account names must adhere to specific rules:
+  - Must be between 3 and 24 characters.
+  - Can contain numbers and lowercase letters only.
+  - Must be unique within Azure.
+- Endpoint Format for Azure Storage Services:
+  - Blob Storage: `https://<storage-account-name>.blob.core.windows.net`
+  - Data Lake Storage Gen2: `https://<storage-account-name>.dfs.core.windows.net`
+  - Azure Files: `https://<storage-account-name>.file.core.windows.net`
+  - Queue Storage: `https://<storage-account-name>.queue.core.windows.net`
+  - Table Storage: `https://<storage-account-name>.table.core.windows.net`
+
+**Storage Tiers**
+- Hot -> Frequently accessed
+- Cold -> Infrequently accessed, stored for 30days
+- Archive -> Rarely accessed, 180 days stored
+
+### Redundancy Options in Azure Storage
+
+**Overview:**
+- Azure Storage ensures data protection from planned and unplanned events through redundancy, ensuring availability and durability.
+- Redundancy options vary in cost and availability, offering different levels of protection against failures.
+
+**Redundancy in the Primary Region:**
+1. **Locally Redundant Storage (LRS):**
+   - Replicates data three times within a single data center.
+   - Provides at least 11 nines of durability.
+   - Lowest-cost option but offers the least durability.
+   ![lrs](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/locally-redundant-storage-37247957.png)
+2. **Zone-Redundant Storage (ZRS):**
+   - Replicates data synchronously across three Azure availability zones.
+   - Offers durability of at least 12 nines.
+   - Recommended for scenarios requiring high availability and data governance.
+   ![zrs](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/zone-redundant-storage-6dd46d22.png)
+
+**Redundancy in a Secondary Region:**
+- Additional copying of data to a secondary region for high durability and disaster recovery.
+- Options: Geo-Redundant Storage (GRS) and Geo-Zone-Redundant Storage (GZRS).
+
+**Geo-Redundant Storage (GRS):**
+- Synchronously copies data within the primary region using LRS and asynchronously to a secondary region.
+- Offers at least 16 nines of durability.
+- Ensures protection from regional disasters.
+![grs](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/geo-redundant-storage-3432d558.png)
+
+**Geo-Zone-Redundant Storage (GZRS):**
+- Combines redundancy across availability zones with protection from regional outages.
+- Copies data across three availability zones in the primary region and replicates it to a secondary region.
+- Designed for maximum consistency, durability, and availability.
+![gzrs](https://learn.microsoft.com/en-us/training/wwl-azure/describe-azure-storage-services/media/geo-zone-redundant-storage-138ab5af.png)
+
+**Read Access to Data in Secondary Region:**
+- Available with GRS or GZRS, but data is accessible only after failover.
+- For immediate read access, enable Read-Access Geo-Redundant Storage (RA-GRS) or Read-Access Geo-Zone-Redundant Storage (RA-GZRS).
+
+Remember that the data in your secondary region may not be up-to-date due to RPO.
+
+**RPO:**
+>Because data is replicated to the secondary region asynchronously, a failure that affects the primary region may result in data loss if the primary region can't be recovered. 
+
+>The interval between the most recent writes to the primary region and the last write to the secondary region is known as the recovery point objective (RPO). The RPO indicates the point in time to which data can be recovered. 
+
+>Azure Storage typically has an RPO of less than 15 minutes, although there's currently no SLA on how long it takes to replicate data to the secondary region.
+
+### Azure Storage Overview**
+
+#### Data Services
+
+- **Azure Blobs:** Massively scalable object store for text and binary data, supports big data analytics through Data Lake Storage Gen2.
+- **Azure Files:** Managed file shares for cloud or on-premises deployments.
+- **Azure Queues:** Messaging store for reliable messaging between application components.
+- **Azure Disks:** Block-level storage volumes for Azure VMs.
+- **Azure Tables:** NoSQL table option for structured, non-relational data.
+
+#### Benefits
+
+- **Durable and Highly Available:** Redundancy ensures data safety during transient hardware failures, option for data replication across data centers or regions.
+- **Secure:** All data encrypted, fine-grained access control.
+- **Scalable:** Designed for massive scalability.
+- **Managed:** Azure handles maintenance, updates, and critical issues.
+- **Accessible:** Data accessible globally over HTTP/HTTPS, with client libraries for various languages and mature REST API.
+
+#### Azure Blobs
+
+- Object storage solution for the cloud, unstructured, ideal for various data types.
+- Accessed via HTTP/HTTPS, Azure Storage REST API, client libraries, PowerShell, Azure CLI.
+- Offers different access tiers for cost-effective storage.
+
+#### Azure Files
+
+- Fully managed file shares accessible via SMB or NFS protocols.
+- Supports shared access, fully managed, resilient, familiar programmability.
+
+#### Azure Queues
+
+- Service for storing large numbers of messages, accessed globally via authenticated calls.
+- Ideal for creating work backlogs for asynchronous processing, can be combined with Azure Functions.
+
+#### Azure Disks
+
+- Block-level storage volumes managed by Azure for Azure VMs.
+- Virtualized, offering greater resiliency and availability than physical disks.
+
+#### Azure Tables
+
+- NoSQL datastore for large amounts of structured data.
+- Accepts authenticated calls from inside and outside Azure cloud, ideal for storing structured, non-relational data.
+
+#### Exercise - Create a Storage Blob**
+**Create a Storage Account:**
+
+1. Sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com).
+2. Select Create a resource.
+3. Under Categories, choose Storage.
+4. Select Storage account, then Create.
+5. Fill in the following information on the Basics tab:
+   - Subscription: Concierge Subscription
+   - Resource group: Select the resource group starting with "learn"
+   - Storage account name: Unique name
+   - Region: Default
+   - Performance: Standard
+   - Redundancy: Locally redundant storage (LRS)
+6. On the Advanced tab, check Allow enabling anonymous access on individual containers.
+7. Select Review, then Create, and wait for the account to be created.
+8. Select Go to resource.
+
+**Work with Blob Storage:**
+
+1. Under Data storage, select Containers.
+2. Select + Container and provide a name and set Anonymous access level to Private.
+3. Select Create.
+4. Upload an image file or search Bing for an image of a flower, save it to your computer, then upload it to the container.
+5. Select the uploaded Blob (file) and copy the URL from the URL field.
+6. Paste the URL into a new tab to receive an error message.
+7. Go back to the Azure portal, select Change access level, set Anonymous access level to Blob, and select OK.
+8. Refresh the tab to access the file from the internet.
+
 ## Azure identity access and security
 # [Describe Azure management and governance](https://learn.microsoft.com/en-us/training/paths/describe-azure-management-governance/)
 ## Cost management in Azure
