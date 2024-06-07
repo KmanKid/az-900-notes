@@ -1178,6 +1178,35 @@ Microsoft Defender for Cloud offers a comprehensive security solution, spanning 
 
 # [Describe Azure management and governance](https://learn.microsoft.com/en-us/training/paths/describe-azure-management-governance/)
 ## Cost management in Azure
+
+### Factors that can affect costs
+Azure shifts development costs from capital expenses (CapEx) of building and maintaining infrastructure to operational expenses (OpEx) of renting infrastructure as needed. Several factors impact these OpEx costs:
+
+#### Resource Type
+The type, settings, and region of resources influence their costs. Azure meters usage to calculate bills based on these factors. For example:
+
+- **Storage Account:** Costs vary by type (blob), performance tier, access tier, redundancy settings, and region.
+- **Virtual Machine (VM):** Costs are influenced by licensing, processor type, number of cores, attached storage, network interface, and region.
+
+#### Consumption
+Azure uses a pay-as-you-go model, charging for resources used during a billing cycle. Discounts are available for reserving resources in advance (up to 72% savings). Committing to a set amount of resources for one or three years can yield significant savings while retaining flexibility to handle demand surges.
+
+#### Maintenance
+Proper maintenance of your cloud environment helps control costs. Resource groups help organize resources. Ensuring that additional resources provisioned with VMs (e.g., storage and networking) are deprovisioned when no longer needed can prevent unnecessary expenses.
+
+#### Geography
+Costs vary by region due to differences in power, labor, taxes, and fees. Network traffic costs also differ based on geography, with intra-region transfers being less expensive than inter-region transfers.
+
+#### Network Traffic
+Data moving in and out of Azure datacenters is billed based on zones. Inbound transfers are often free, while outbound transfers are priced according to geographical zones.
+
+#### Subscription Type
+Subscription types can include usage allowances affecting costs. For instance, an Azure free trial includes access to free products for 12 months and initial credits, with ongoing access to over 25 always-free products.
+
+#### Azure Marketplace
+Purchasing solutions from third-party vendors through Azure Marketplace may involve costs for both Azure services and the third-party services or expertise. All solutions are certified and compliant with Azure policies.
+
+By understanding these factors, you can better manage and optimize your Azure costs.
 ## Features and Tools in Azure for governance and compliance
 ## Features and tools for managing and deploying Azure resources
 ## Monitoring tools
