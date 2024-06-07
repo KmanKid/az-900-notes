@@ -1150,6 +1150,32 @@ Azure provides security tools and features at every layer of the defense-in-dept
 
 This comprehensive approach to security ensures that Azure users can implement a robust defense-in-depth strategy to protect their cloud resources.
 
+### Microsoft Defender for Cloud
+Microsoft Defender for Cloud serves as a comprehensive monitoring tool for security posture management and threat protection across various environments, including cloud, on-premises, hybrid, and multi-cloud setups. It provides tools to harden resources, track security posture, protect against cyber attacks, and streamline security management tasks. Deployment is seamless due to native integration with Azure.
+
+#### Protection Everywhere You're Deployed:
+Defender for Cloud offers Azure-native protections, automatically monitoring and protecting Azure services. For non-Azure environments, it can deploy a Log Analytics agent or extend Defender plans to non-Azure machines via Azure Arc, ensuring comprehensive security posture management across multi-cloud setups.
+
+#### Azure-Native Protections:
+Detects threats across Azure PaaS services, Azure data services, and networks, offering capabilities for anomaly detection, vulnerability assessments, and limiting exposure to brute force attacks.
+
+#### Defend Your Hybrid Resources:
+Extends protection to non-Azure servers in hybrid environments, providing customized threat intelligence and prioritized alerts through Azure Arc integration.
+
+#### Defend Resources Running on Other Clouds:
+Protects resources in other clouds like AWS and GCP, offering CSPM features, container threat detection, and advanced defenses for various cloud services.
+
+#### Assess, Secure, and Defend:
+- **Continuously assess:** Provides vulnerability assessment solutions for virtual machines, container registries, and SQL servers.
+- **Secure:** Implements security policies based on Azure Policy controls, applying secure configuration standards across resources.
+- **Defend:** Generates security alerts, provides advanced threat protection features, and conducts fusion kill-chain analysis to better understand attack campaigns.
+
+#### Conclusion:
+Microsoft Defender for Cloud offers a comprehensive security solution, spanning across various environments, providing continuous assessment, secure configuration, and robust defense mechanisms to safeguard organizations' cloud resources effectively.
+
+### Knowledge Check
+![describe-azure-identity-access-security](describe-azure-identity-access-security_kc.png)
+
 # [Describe Azure management and governance](https://learn.microsoft.com/en-us/training/paths/describe-azure-management-governance/)
 ## Cost management in Azure
 ## Features and Tools in Azure for governance and compliance
