@@ -1,5 +1,9 @@
 Notes and Resources for the AZ-900 certification.
 
+*!Disclaimer!:*
+
+*In the beginning i wrote the summarys myself. In order to safe time i switched to AI assisted note taking.*
+
 # [Describe cloud concepts](https://learn.microsoft.com/en-us/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/)
 
 
@@ -1207,6 +1211,107 @@ Subscription types can include usage allowances affecting costs. For instance, a
 Purchasing solutions from third-party vendors through Azure Marketplace may involve costs for both Azure services and the third-party services or expertise. All solutions are certified and compliant with Azure policies.
 
 By understanding these factors, you can better manage and optimize your Azure costs.
+
+### Comparison of the Pricing and Total Cost of Ownership (TCO) Calculators
+
+Azure provides two calculators to help users understand potential expenses: the Pricing Calculator and the Total Cost of Ownership (TCO) Calculator. Though both tools are accessible online and allow for configuration, they serve different purposes.
+
+#### Pricing Calculator
+
+**Purpose**
+- **Estimate Costs for Provisioning Resources in Azure**: This calculator is used to estimate the costs associated with provisioning individual resources or building out solutions in Azure.
+
+**Features**
+- **Resource Cost Estimation**: Get an estimate for compute, storage, and network costs.
+- **Solution Building**: Build out a solution or use example scenarios for cost estimation.
+- **Detailed Options**: Account for different storage options, such as type, access tier, and redundancy.
+
+**Notes**
+- **Informational Only**: The prices provided are only estimates and are for informational purposes. Nothing is provisioned, and there are no charges for services selected in the calculator.
+
+![Pricing Calculator](https://learn.microsoft.com/en-us/training/wwl-azure/describe-cost-management-azure/media/price-calculator-0a750ac3.png)
+
+#### TCO Calculator
+
+**Purpose**
+- **Compare On-Premises vs. Azure Cloud Costs**: This calculator helps compare the costs of running an on-premises infrastructure against an Azure Cloud infrastructure.
+
+**Features**
+- **Current Infrastructure Configuration**: Input details of your current infrastructure, including servers, databases, storage, and network traffic.
+- **Cost Comparison**: Compare the anticipated costs of your current environment with those of an equivalent Azure environment.
+- **Assumptions**: Add assumptions such as power and IT labor costs for a more accurate comparison.
+![TCO Calculator](https://learn.microsoft.com/en-us/training/wwl-azure/describe-cost-management-azure/media/total-cost-ownership-657fe344.png)
+
+#### Summary
+
+- **Pricing Calculator**: Focuses on estimating the cost of provisioning Azure resources. It helps users understand potential expenses for various Azure services.
+- **TCO Calculator**: Aids in comparing the total cost of ownership between on-premises and Azure Cloud infrastructures. It provides insights into potential cost savings by transitioning to Azure.
+
+Both calculators are essential tools for planning and budgeting Azure expenses, but they cater to different stages and aspects of cost analysis.
+
+### Microsoft Azure Cost Management Tool
+
+Microsoft Azure is a global cloud provider, enabling rapid provisioning of resources worldwide. This flexibility can lead to accidental resource provisioning and unexpected costs. **Cost Management** is a service that helps monitor and control Azure resource expenses, ensuring you stay within your budget.
+
+#### What is Cost Management?
+
+Cost Management allows you to:
+- **Check Azure resource costs quickly.**
+- **Create alerts based on resource spend.**
+- **Set budgets to automate resource management.**
+
+#### Cost Analysis
+
+Cost analysis is a feature within Cost Management that provides visual insights into your Azure expenses. It allows you to:
+- **View total costs by billing cycle, region, resource, etc.**
+- **Explore and analyze organizational costs.**
+- **Identify spending trends.**
+- **Estimate monthly, quarterly, or yearly cost trends against a budget.**
+
+![Cost Analysis Screenshot](https://learn.microsoft.com/en-us/training/wwl-azure/describe-cost-management-azure/media/cost-analysis-b52dedab.png)
+
+#### Cost Alerts
+
+Cost alerts offer a centralized location to monitor different alert types in Cost Management. The three main types of alerts are:
+
+#### Budget Alerts
+
+- **Notify when spending (based on usage or cost) reaches or exceeds the defined budget alert condition.**
+- **Created using the Azure portal or Azure Consumption API.**
+- **Support both cost-based and usage-based budgets.**
+- **Automatically generated when alert conditions are met.**
+- **Visible in cost alerts and sent via email to alert recipients.**
+
+#### Credit Alerts
+
+- **Notify when Azure credit monetary commitments are consumed.**
+- **Applicable for organizations with Enterprise Agreements (EAs).**
+- **Generated at 90% and 100% of the Azure credit balance.**
+- **Reflected in cost alerts and sent via email to account owners.**
+
+#### Department Spending Quota Alerts
+
+- **Notify when department spending reaches a fixed threshold of the quota.**
+- **Configured in the EA portal.**
+- **Generate emails to department owners and appear in cost alerts when thresholds (e.g., 50% or 75%) are met.**
+
+#### Budgets
+
+A budget helps set a spending limit for Azure resources. You can set budgets based on:
+- **Subscription**
+- **Resource group**
+- **Service type**
+- **Other criteria**
+
+#### Features
+
+- **Set budget alerts to notify when spending reaches the budget alert level.**
+- **Alerts appear in cost alerts and can trigger email notifications.**
+- **Advanced budgets can trigger automation to suspend or modify resources once the budget condition is met.**
+
+Cost Management in Azure is a comprehensive service for monitoring and controlling cloud expenses. By using cost analysis, cost alerts, and budgets, you can ensure better financial management and avoid unexpected costs in your Azure environment.
+
+
 ## Features and Tools in Azure for governance and compliance
 ## Features and tools for managing and deploying Azure resources
 ## Monitoring tools
