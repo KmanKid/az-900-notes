@@ -1367,6 +1367,9 @@ Tags are not inherited from subscriptions or resource groups, allowing for custo
 
 By effectively using resource tags, you can enhance the management, security, and compliance of your Azure environment.
 
+### Knowledge check
+![describe-cost-management-azure_kc](describe-cost-management-azure_kc.png)
+
 ## Features and Tools in Azure for governance and compliance
 ## Features and tools for managing and deploying Azure resources
 ## Monitoring tools
