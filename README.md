@@ -1371,5 +1371,152 @@ By effectively using resource tags, you can enhance the management, security, an
 ![describe-cost-management-azure_kc](describe-cost-management-azure_kc.png)
 
 ## Features and Tools in Azure for governance and compliance
+
+### Microsoft Purview
+
+Microsoft Purview is a comprehensive family of data governance, risk, and compliance solutions designed to provide a unified view into your data across on-premises, multicloud, and software-as-a-service (SaaS) environments. It helps organizations stay informed about their data landscape through automated data discovery, sensitive data classification, and end-to-end data lineage.
+
+#### Key Features of Microsoft Purview
+
+1. **Automated Data Discovery**
+   - Automatically discover data across your data estate.
+
+2. **Sensitive Data Classification**
+   - Classify data based on sensitivity to ensure proper handling and compliance.
+
+3. **End-to-End Data Lineage**
+   - Track the data journey from source to destination, understanding how data is processed and transformed.
+
+#### Main Solution Areas
+
+Microsoft Purview is divided into two primary solution areas:
+
+**Risk and Compliance**
+   - **Microsoft 365 Integration**: Utilizes core Microsoft 365 services such as Microsoft Teams, OneDrive, and Exchange to manage and monitor data.
+   - **Protection and Compliance**: Helps protect sensitive data across clouds, apps, and devices, identify data risks, manage regulatory compliance requirements, and get started with regulatory compliance.
+
+**Unified Data Governance**
+   - **Data Governance Capabilities**: Manages data across on-premises, multicloud, and SaaS environments.
+   - **Data Estate Mapping**: Creates an up-to-date map of your entire data estate, including data classification and lineage.
+   - **Sensitive Data Identification**: Identifies where sensitive data is stored.
+   - **Secure Data Environment**: Ensures data consumers can securely find and use valuable data.
+   - **Insight Generation**: Provides insights into how data is stored and used.
+   - **Access Management**: Manages access to data securely and at scale.
+
+#### Benefits of Microsoft Purview
+
+- **Comprehensive Data Management**: Offers a single platform to manage data across various environments.
+- **Enhanced Data Protection**: Protects sensitive data and helps maintain compliance with regulatory requirements.
+- **Improved Data Visibility**: Provides a clear view of data classification, lineage, and usage.
+- **Scalable Access Management**: Ensures secure and scalable access to data across the organization.
+
+By leveraging Microsoft Purview, organizations can efficiently manage their data landscape, ensuring data protection, compliance, and governance across their entire data estate.
+
+### Purpose of Azure Policy
+Azure Policy is a service within Azure that allows you to create, assign, and manage policies to control or audit your resources. These policies enforce rules across your resource configurations to ensure compliance with corporate standards.
+
+#### Ensuring Compliance and Alerts
+Azure Policy ensures resources stay compliant by:
+
+- Defining and evaluating policies.
+- Highlighting noncompliant resources.
+- Preventing the creation of noncompliant resources.
+- Providing alerts if a resource's configuration changes.
+
+#### Defining Policies
+Azure Policy allows the creation of:
+
+- Individual Policies: Specific rules for resource configurations.
+- Initiatives: Groups of related policies for comprehensive compliance goals.
+
+Policies and initiatives can be applied at various levels, such as a specific resource, resource group, or subscription. Policies are inherited, meaning a policy set at a higher level applies to all underlying resources.
+
+#### Built-in Policy and Initiative Definitions
+Azure Policy provides built-in definitions for various resource types, including:
+
+- Storage
+- Networking
+- Compute
+- Security Center
+- Monitoring
+
+For example, a policy may restrict VM sizes, and Azure Policy will enforce this rule during the creation or resizing of VMs. It continuously monitors all resources, including those created before the policy was established.
+
+#### Automatic Remediation
+Azure Policy can automatically remediate noncompliant resources. For instance, it can auto-apply missing tags to resources. However, you can flag exceptions for specific resources that you do not want automatically fixed.
+
+#### Integration with Azure DevOps
+Azure Policy integrates with Azure DevOps, enforcing policies in continuous integration and delivery pipelines during pre-deployment and post-deployment phases.
+
+#### Azure Policy Initiatives
+An initiative groups related policies to track compliance towards a larger goal.
+
+Example Initiative: Enable Monitoring in Azure Security Center
+This initiative aims to monitor security recommendations for all Azure resource types and includes policies such as:
+
+- Monitoring unencrypted SQL databases.
+- Monitoring OS vulnerabilities.
+- Monitoring missing endpoint protection.
+
+The Enable Monitoring in Azure Security Center initiative includes over 100 policy definitions, demonstrating its comprehensive approach to security and compliance monitoring.
+
+### Azure Resource Locks
+
+A resource lock prevents resources from being accidentally deleted or changed.
+
+Even with Azure role-based access control (Azure RBAC) policies in place, there's still a risk that people with the right level of access could delete critical cloud resources. Resource locks prevent resources from being deleted or updated, depending on the type of lock. Resource locks can be applied to individual resources, resource groups, or even an entire subscription. Resource locks are inherited, meaning that if you place a resource lock on a resource group, all of the resources within the resource group will also have the resource lock applied.
+
+#### Types of Resource Locks
+
+There are two types of resource locks:
+
+1. **Delete**: Authorized users can still read and modify a resource, but they can't delete the resource.
+2. **ReadOnly**: Authorized users can read a resource, but they can't delete or update the resource. Applying this lock is similar to restricting all authorized users to the permissions granted by the Reader role.
+
+#### Managing Resource Locks
+
+You can manage resource locks from the Azure portal, PowerShell, the Azure CLI, or from an Azure Resource Manager template.
+
+To view, add, or delete locks in the Azure portal, go to the Settings section of any resource's Settings pane in the Azure portal.
+
+![resource-lock](https://learn.microsoft.com/en-us/training/wwl-azure/describe-features-tools-azure-for-governance-compliance/media/resource-lock-54695e43.png)
+
+#### Deleting or Changing a Locked Resource
+
+Although locking helps prevent accidental changes, you can still make changes by following a two-step process.
+
+1. Remove the lock.
+2. Apply any action you have permissions to perform.
+
+Resource locks apply regardless of RBAC permissions. Even if you're an owner of the resource, you must still remove the lock before you can perform the blocked activity.
+
+### Service Trust Portal
+
+The Microsoft Service Trust Portal is designed to provide access to a variety of content, tools, and resources related to Microsoft's security, privacy, and compliance practices. It details Microsoft's implementation of controls and processes to protect their cloud services and customer data.
+
+#### Access Requirements
+
+To access some resources on the Service Trust Portal, users must:
+- Sign in with a Microsoft cloud services account (Microsoft Entra organization account).
+- Review and accept the Microsoft non-disclosure agreement for compliance materials.
+
+#### Accessing the Service Trust Portal
+
+You can access the Service Trust Portal at [https://servicetrust.microsoft.com/](https://servicetrust.microsoft.com/).
+
+#### Features
+
+The main menu on the Service Trust Portal includes the following categories:
+
+- **Service Trust Portal**: Provides a quick access hyperlink to return to the home page.
+- **My Library**: Allows users to save (or pin) documents for quick access and set up notifications for updates.
+- **All Documents**: A single landing place for all documents on the portal. Users can pin documents from here to have them show up in My Library.
+
+### Knowledge Check
+![describe-features-tools-azure-for-governance-compliance](describe-features-tools-azure-for-governance-compliance_kc.png)
+
 ## Features and tools for managing and deploying Azure resources
+
+### Tools for interacting with Azure
+
 ## Monitoring tools
